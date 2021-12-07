@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #fffafa;
+}
+
+body {
+  margin: 0;
+  font-family: "Fuzzy Bubbles", cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+header,
+footer,
+main {
+  padding: 2rem;
+  text-align: center;
+}
+
+.animalsList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 2rem;
+}
+.non {
+  margin-top: 5%;
+  font-size: larger;
+}
+.card {
+  background-color: snow;
+  box-shadow: 0 0 5px rgb(121, 121, 121);
+  width: 200px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 1rem;
+  text-transform: capitalize;
+  filter: grayscale(100%);
+  transition: all 0.5s;
+}
+
+.card:hover {
+  box-shadow: 0 0 20px rgb(121, 121, 121);
+  filter: grayscale(0%);
+  cursor: pointer;
+}
+
+.card h2 {
+  padding: 1rem;
+}
+
+.card img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 1rem;
+}
+
+button {
+  padding: 1rem 2rem;
+  background-color: lightseagreen;
+  border: 1px solid rgb(23, 135, 129);
+  box-shadow: 0 0 5px #333;
+  margin: 2rem;
+}
+input {
+  width: 20%;
+}
