@@ -7,6 +7,7 @@ import {
 import "./index.css";
 import Home from "./Home";
 import Countries from "./Countries";
+import About from "./About";
 import CountrySingle from "./CountrySingle";
 import "./index.css";
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/countries" element={<Countries />} />
           <Route path="/countries/:name" element={<RouteWrapper />} />
         </Routes>

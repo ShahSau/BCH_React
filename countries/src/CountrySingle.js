@@ -54,63 +54,102 @@ class CountrySingle extends Component {
 
     if (!this.state.isLoading) {
       return (
-        <div className="single">
-          <Navbar />
-          Right now it is {this.state.weather.main.temp}&#8451; (feels like:{" "}
-          {this.state.weather.main.feels_like}&#8451;) in{" "}
-          {this.state.country.capital} with pressure:
-          {this.state.weather.main.pressure}hPa, visibility:
-          {this.state.weather.visibility}m.
-          <img
-            src={`http://openweathermap.org/img/wn/${this.state.weather.weather[0].icon}@2x.png`}
-            alt={this.state.weather.weather[0].description}
-          />
-          <div class="p-10">
-            <div class=" w-full lg:max-w-full lg:flex">
-              <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden">
-                <img
-                  src={`http://openweathermap.org/img/wn/${this.state.weather.weather[0].icon}@2x.png`}
-                  alt={this.state.weather.weather[0].description}
-                />
-              </div>
-              <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-                <div class="mb-8">
-                  <p class="text-sm text-gray-600 flex items-center">
-                    <GrLocation /> {this.state.country.capital}
-                  </p>
-                  <div class="text-gray-900 font-bold text-xl mb-2">
-                    Current Temperature: {this.state.weather.main.temp}&#8451;
-                    <br />
-                    {this.state.weather.weather[0].description} with feels like:
-                    {this.state.weather.main.feels_like}&#8451;
-                    <br />
-                    <div class="flex items-center">
-                      <div class="flex items-center">
-                        <FaTemperatureHigh />
-                        {this.state.weather.main.temp_max}&#8451;&nbsp;&nbsp;
-                      </div>
-                      <div></div>
-                      <div class="flex items-center">
-                        <FaTemperatureLow />
-                        {this.state.weather.main.temp_min}&#8451;
-                      </div>
+        // <div className="single">
+        //   <Navbar />
+
+        //   <div class="p-10">
+        //     <div class=" w-full lg:max-w-full lg:flex">
+        //       <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden">
+        //         <img
+        //           src={`http://openweathermap.org/img/wn/${this.state.weather.weather[0].icon}@2x.png`}
+        //           alt={this.state.weather.weather[0].description}
+        //         />
+        //       </div>
+        //       <div>
+        //         <div className="mb-8">
+        //           <p className="text-sm text-gray-600 flex items-center">
+        //             <GrLocation /> {this.state.country.capital}
+        //           </p>
+        //           <div class="text-white-900 font-bold text-xl mb-2">
+        //             Current Temperature: {this.state.weather.main.temp}&#8451;
+        //             <br />
+        //             {this.state.weather.weather[0].description} with feels like:
+        //             {this.state.weather.main.feels_like}&#8451;
+        //             <br />
+        //             <div class="flex items-center">
+        //               <div class="flex items-center">
+        //                 <FaTemperatureHigh />
+        //                 {this.state.weather.main.temp_max}&#8451;&nbsp;&nbsp;
+        //               </div>
+        //               <div></div>
+        //               <div class="flex items-center">
+        //                 <FaTemperatureLow />
+        //                 {this.state.weather.main.temp_min}&#8451;
+        //               </div>
+        //             </div>
+        //           </div>
+        //           <p class="text-gray-700 text-base">
+        //             {/* , humidity, visibility,  */}
+        //             <div class="flex items-center">
+        //               <WiHumidity /> {this.state.weather.main.humidity}
+        //             </div>
+        //             <div class="flex items-center">
+        //               <MdVisibility /> {this.state.weather.visibility} meters
+        //             </div>
+        //           </p>
+        //         </div>
+        //         {/* </div> */}
+        //       </div>
+        //     </div>
+        //   </div>
+
+        // </div>
+        <div id="cards_landscape_wrap-2">
+          <div className="container">
+            <div className="row">
+              <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <div className="card-flyer">
+                  <div className="text-box">
+                    <div className="image-box">
+                      <img
+                        src={`http://openweathermap.org/img/wn/${this.state.weather.weather[0].icon}@2x.png`}
+                        alt="weather"
+                      />
+                    </div>
+                    <div className="text-container">
+                      <h6>{this.state.country.capital}</h6>
+                      <p>
+                        Current Temperature: {this.state.weather.main.temp}
+                        &#8451;
+                        <br />
+                        {this.state.weather.weather[0].description} weather with
+                        feels like:
+                        {this.state.weather.main.feels_like}&#8451;
+                        <div class="flex items-center">
+                          <FaTemperatureHigh />
+                          {this.state.weather.main.temp_max}&#8451;&nbsp;&nbsp;
+                        </div>
+                        <div></div>
+                        <div class="flex items-center">
+                          <FaTemperatureLow />
+                          {this.state.weather.main.temp_min}&#8451;
+                        </div>
+                        <div class="flex items-center">
+                          <WiHumidity /> {this.state.weather.main.humidity} %
+                        </div>
+                        <div class="flex items-center">
+                          <MdVisibility /> {this.state.weather.visibility}{" "}
+                          meters
+                        </div>
+                      </p>
                     </div>
                   </div>
-                  <p class="text-gray-700 text-base">
-                    {/* , humidity, visibility,  */}
-                    <div class="flex items-center">
-                      <WiHumidity /> {this.state.weather.main.humidity}
-                    </div>
-                    <div class="flex items-center">
-                      <MdVisibility /> {this.state.weather.visibility} meters
-                    </div>
-                  </p>
                 </div>
-                {/* </div> */}
               </div>
             </div>
           </div>
         </div>
+        // </div>
       );
     }
   }
